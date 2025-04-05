@@ -1,0 +1,6 @@
+pillow
+ipython
+numpy
+requests
+spotipy
+zeroconf
