@@ -16,9 +16,10 @@ try:
             break
     if not panel_ip_address:
         print("no panel found!")
+        assert 0
     while True:
         # Your repeated task goes here
-        album_art_url = spotify_client.get_current_album_art_url()
+        album_art_url = spotify_client.get_current_album_art_url() or album_art_url
         if url != album_art_url:
             url = album_art_url
             image = fetch_and_load_image(url)

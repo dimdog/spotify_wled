@@ -20,7 +20,6 @@ def convert_image_to_led_array(image):
 def split_send_leds(led_array, ip_address):
     step = 200
     for start_led in range(0, len(led_array), step):
-        print(start_led)
         start = [start_led]
         data = led_array[start_led:start_led+step]
         start.extend(data)
@@ -34,8 +33,7 @@ def split_send_leds(led_array, ip_address):
         WLED_JSON_URL = f"http://{ip_address}/json/state"
         response = requests.post(WLED_JSON_URL, json=data)
         if response.status_code == 200:
-            print(response.json())
-            print("Image sent successfully!")
+            pass
         else:
             print("Failed to send image:", response.text)
 

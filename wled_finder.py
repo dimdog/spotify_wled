@@ -12,7 +12,6 @@ class WLEDListener:
         info = zeroconf.get_service_info(type, name)
         if info:
             ip_address = ".".join(map(str, info.addresses[0]))
-            print(f"Found WLED device: {name} at {ip_address}")
             self.devices.append((name, ip_address))
 
     def update_service(self, *args, **kwargs):
