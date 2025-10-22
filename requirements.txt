@@ -5,3 +5,6 @@ requests
 spotipy
 zeroconf
 esptool
+redis
+loguru
+gpiozero
